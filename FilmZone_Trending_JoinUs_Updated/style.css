@@ -1,0 +1,4022 @@
+
+/* =====================================================
+   FILM ZONE
+   MODERN MOVIE WEBSITE
+===================================================== */
+
+@import url(
+    'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap'
+);
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #050505;
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+button,
+input,
+select {
+    font-family: inherit;
+}
+
+button {
+    outline: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header {
+    width: 100%;
+    min-height: 76px;
+    padding: 0 6%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    z-index: 2000;
+
+    background: rgba(5, 5, 5, 0.88);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+
+    transition: 0.3s ease;
+}
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.logo {
+    text-decoration: none;
+    color: #fff;
+
+    font-size: 29px;
+    font-weight: 900;
+
+    letter-spacing: -1px;
+    white-space: nowrap;
+}
+
+.logo span {
+    color: #e50914;
+}
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    list-style: none;
+}
+
+.nav-list > li {
+    position: relative;
+}
+
+.nav-list > li > a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    padding: 10px 13px;
+
+    color: #cfcfcf;
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    transition: 0.3s ease;
+}
+
+.nav-list > li > a:hover {
+    color: #fff;
+}
+
+/* =====================================================
+   ARROW
+===================================================== */
+
+.arrow {
+    font-size: 16px;
+    transition: 0.3s ease;
+}
+
+.dropdown-parent:hover .arrow {
+    transform: rotate(180deg);
+}
+
+/* =====================================================
+   DROPDOWN
+===================================================== */
+
+.dropdown {
+    position: absolute;
+
+    top: 48px;
+    left: 0;
+
+    min-width: 175px;
+
+    padding: 8px;
+
+    list-style: none;
+
+    background: rgba(18,18,18,0.98);
+
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(10px);
+
+    transition: 0.25s ease;
+
+    box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+}
+
+.dropdown-parent:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown li a {
+    display: block;
+
+    padding: 11px 13px;
+
+    color: #cfcfcf;
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+
+    transition: 0.2s ease;
+}
+
+.dropdown li a:hover {
+    background: #e50914;
+    color: #fff;
+}
+
+/* =====================================================
+   NAV BUTTONS
+===================================================== */
+
+.nav-buttons {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.login,
+.join-us {
+    border: none;
+    cursor: pointer;
+
+    padding: 9px 17px;
+
+    border-radius: 7px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+.login {
+    color: #fff;
+    background: transparent;
+
+    border: 1px solid #444;
+}
+
+.login:hover {
+    background: #fff;
+    color: #000;
+}
+
+.join-us {
+    color: #fff;
+    background: #e50914;
+}
+
+.join-us:hover {
+    background: #ff1a25;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 25px rgba(229,9,20,0.35);
+}
+
+/* =====================================================
+   HOME
+===================================================== */
+
+.Home {
+    position: relative;
+
+    min-height: 100vh;
+
+    padding: 120px 6% 70px;
+
+    overflow: hidden;
+    isolation: isolate;
+
+    background: #080808;
+
+    display: flex;
+    align-items: center;
+}
+
+/* =====================================================
+   HOME BACKGROUND
+===================================================== */
+
+.home-bg {
+    position: absolute;
+
+    top: -35px;
+    left: -35px;
+    right: -35px;
+    bottom: -35px;
+
+    z-index: -3;
+
+    overflow: hidden;
+
+    filter: blur(3px);
+
+    transform: scale(1.04);
+}
+
+.home-bg img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+/* =====================================================
+   HOME OVERLAY
+===================================================== */
+
+.home-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: -2;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,0.96) 0%,
+            rgba(0,0,0,0.82) 30%,
+            rgba(0,0,0,0.52) 60%,
+            rgba(0,0,0,0.78) 100%
+        );
+}
+
+/* =====================================================
+   RED GLOW
+===================================================== */
+
+.Home::after {
+    content: "";
+
+    position: absolute;
+
+    width: 550px;
+    height: 550px;
+
+    right: -250px;
+    top: 80px;
+
+    border-radius: 50%;
+
+    background: rgba(229,9,20,0.13);
+
+    filter: blur(100px);
+
+    z-index: -1;
+
+    pointer-events: none;
+}
+
+/* =====================================================
+   HOME CONTENT
+===================================================== */
+
+.home-content {
+    position: relative;
+
+    max-width: 850px;
+
+    z-index: 2;
+}
+
+/* =====================================================
+   MAIN TITLE
+===================================================== */
+
+.welcome {
+    max-width: 850px;
+
+    font-size: clamp(44px, 6vw, 78px);
+
+    line-height: 1.05;
+
+    font-weight: 900;
+
+    letter-spacing: -3px;
+
+    color: #fff;
+
+    animation: fadeUp 0.8s ease;
+}
+
+.welcome span {
+    display: block;
+
+    color: #e50914;
+
+    text-shadow:
+        0 0 35px rgba(229,9,20,0.18);
+}
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.ph {
+    max-width: 650px;
+
+    margin-top: 24px;
+
+    color: #b7b7b7;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    animation: fadeUp 1s ease;
+}
+
+/* =====================================================
+   HERO BUTTONS
+===================================================== */
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 30px;
+
+    animation: fadeUp 1.1s ease;
+}
+
+.watch-btn,
+.explore-btn {
+    padding: 12px 21px;
+
+    border-radius: 7px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.watch-btn {
+    background: #e50914;
+
+    border: 1px solid #e50914;
+
+    color: #fff;
+}
+
+.watch-btn:hover {
+    background: #ff1a25;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 30px rgba(229,9,20,0.3);
+}
+
+.explore-btn {
+    background: rgba(255,255,255,0.07);
+
+    border: 1px solid rgba(255,255,255,0.2);
+
+    color: #fff;
+}
+
+.explore-btn:hover {
+    background: rgba(255,255,255,0.15);
+
+    transform: translateY(-3px);
+}
+
+/* =====================================================
+   STATS
+===================================================== */
+
+.hero-stats {
+    display: flex;
+    align-items: center;
+
+    gap: 35px;
+
+    margin-top: 35px;
+
+    animation: fadeUp 1.2s ease;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat strong {
+    font-size: 20px;
+    color: #fff;
+}
+
+.stat span {
+    margin-top: 2px;
+
+    color: #888;
+
+    font-size: 11px;
+}
+
+/* =====================================================
+   TRENDING SECTION
+===================================================== */
+
+.Home-movies {
+    position: relative;
+
+    padding: 80px 6% 90px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #050505 0%,
+            #080808 100%
+        );
+
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.trending {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 1400px;
+
+    margin: 0 auto;
+}
+
+/* =====================================================
+   SECTION TITLE
+===================================================== */
+
+.section-title {
+    display: flex;
+
+    align-items: flex-end;
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+}
+
+.small-title {
+    display: block;
+
+    margin-bottom: 15px;
+
+    color: #e50914;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+   
+
+    text-transform: uppercase;
+}
+.small-title {
+    width: 100%;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.Title-fire {
+    width: 100%;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 45px;
+}
+.trending h2 {
+    font-size: 30px;
+
+    line-height: 1.2;
+
+    font-weight: 800;
+}
+
+.trending h2 span {
+    font-size: 23px;
+}
+
+
+
+
+
+
+/* =====================================================
+   CLEAR FILTERS
+===================================================== */
+
+.see-all {
+    background: transparent;
+
+    border: none;
+
+    color: #999;
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.see-all:hover {
+    color: #e50914;
+}
+
+/* =====================================================
+   SEARCH + FILTER
+===================================================== */
+
+.movie-tools {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 14px;
+
+    margin-bottom: 10px;
+
+    padding: 14px;
+
+    background: rgba(255,255,255,0.035);
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    border-radius: 14px;
+}
+
+.movie-search {
+    flex: 1;
+
+    min-width: 220px;
+
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 0 13px;
+
+    background: #101010;
+
+    border: 1px solid rgba(255,255,255,0.09);
+
+    border-radius: 9px;
+
+    transition: 0.25s ease;
+}
+
+.movie-search:focus-within {
+    border-color: #e50914;
+
+    box-shadow:
+        0 0 20px rgba(229,9,20,0.12);
+}
+
+.movie-search span {
+    color: #e50914;
+
+    font-size: 22px;
+}
+
+.movie-search input {
+    width: 100%;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: #fff;
+
+    font-size: 13px;
+}
+
+.movie-search input::placeholder {
+    color: #777;
+}
+
+/* =====================================================
+   FILTER GROUP
+===================================================== */
+
+.filter-group {
+    display: flex;
+
+    gap: 9px;
+}
+
+.filter-group select {
+    height: 45px;
+
+    min-width: 145px;
+
+    padding: 0 12px;
+
+    color: #fff;
+
+    background: #101010;
+
+    border: 1px solid rgba(255,255,255,0.09);
+
+    border-radius: 9px;
+
+    outline: none;
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.filter-group select:hover,
+.filter-group select:focus {
+    border-color: #e50914;
+}
+
+.filter-group option {
+    background: #111;
+    color: #fff;
+}
+
+/* =====================================================
+   RESULT COUNT
+===================================================== */
+
+.movie-result-count {
+    margin: 0 0 12px 4px;
+
+    color: #777;
+
+    font-size: 11px;
+}
+
+/* =====================================================
+   MOVIE SLIDER
+===================================================== */
+
+.image-slider {
+    width: 100%;
+
+    display: flex;
+
+    gap: 18px;
+
+    overflow-x: auto;
+
+    overflow-y: hidden;
+
+    padding: 8px 5px 25px;
+
+    scroll-behavior: smooth;
+}
+
+.image-slider::-webkit-scrollbar {
+    height: 6px;
+}
+
+.image-slider::-webkit-scrollbar-track {
+    background: rgba(255,255,255,0.05);
+
+    border-radius: 20px;
+}
+
+.image-slider::-webkit-scrollbar-thumb {
+    background: #e50914;
+
+    border-radius: 20px;
+}
+
+.image-slider::-webkit-scrollbar-thumb:hover {
+    background: #ff1a25;
+}
+
+/* =====================================================
+   MOVIE CARD
+===================================================== */
+
+.movie-card {
+    position: relative;
+
+    flex: 0 0 180px;
+
+    width: 180px;
+
+    height: 270px;
+
+    overflow: hidden;
+
+    border-radius: 12px;
+
+    background: #111;
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    cursor: pointer;
+
+    transition: 0.35s ease;
+}
+
+.movie-card:hover {
+    transform:
+        translateY(-8px)
+        scale(1.03);
+
+    border-color: #e50914;
+
+    box-shadow:
+        0 20px 40px rgba(0,0,0,0.65),
+        0 0 25px rgba(229,9,20,0.15);
+}
+
+/* =====================================================
+   MOVIE IMAGE
+===================================================== */
+
+.movie-card img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    background: #151515;
+
+    transition: 0.4s ease;
+}
+
+.movie-card:hover img {
+    transform: scale(1.06);
+}
+
+/* =====================================================
+   MOVIE INFO
+===================================================== */
+
+.movie-info {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    padding: 45px 12px 13px;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(0,0,0,0.96)
+        );
+}
+
+.movie-info h3 {
+    font-size: 13px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+.movie-info p {
+    margin-top: 4px;
+
+    color: #aaa;
+
+    font-size: 9px;
+}
+
+/* =====================================================
+   EMPTY RESULT
+===================================================== */
+
+.movie-empty {
+    display: none;
+
+    flex: 0 0 100%;
+
+    min-height: 190px;
+
+    padding: 45px 20px;
+
+    text-align: center;
+
+    border: 1px dashed rgba(255,255,255,0.12);
+
+    border-radius: 12px;
+
+    background: rgba(255,255,255,0.025);
+}
+
+.movie-empty.show {
+    display: block;
+}
+
+.movie-empty > div {
+    font-size: 32px;
+}
+
+.movie-empty h3 {
+    margin-top: 8px;
+
+    font-size: 16px;
+}
+
+.movie-empty p {
+    margin-top: 5px;
+
+    color: #777;
+
+    font-size: 11px;
+}
+
+/* =====================================================
+   ABOUT
+===================================================== */
+
+.about-section {
+    min-height: 500px;
+
+    padding: 100px 6%;
+
+    display: flex;
+
+    align-items: center;
+
+    background:
+        linear-gradient(
+            180deg,
+            #050505,
+            #0c0c0c
+        );
+ 
+ 
+
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.about-content {
+    max-width: 700px;
+
+
+}
+
+.about-content h2 {
+    margin-top: 10px;
+
+    font-size: clamp(35px, 5vw, 60px);
+
+    line-height: 1.1;
+
+    letter-spacing: -2px;
+}
+
+.about-content h2 span {
+    color: #e50914;
+}
+
+.about-content p {
+    max-width: 600px;
+
+    margin-top: 20px;
+
+    color: #999;
+
+    line-height: 1.8;
+
+    font-size: 15px;
+}
+
+/* =====================================================
+   JOIN US MODAL
+===================================================== */
+
+body.modal-open {
+    overflow: hidden;
+}
+
+.join-modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 5000;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition: 0.3s ease;
+}
+
+.join-modal.show {
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+}
+
+/* =====================================================
+   MODAL BACKDROP
+===================================================== */
+
+.join-backdrop {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        rgba(0,0,0,0.82);
+
+    backdrop-filter: blur(6px);
+
+    -webkit-backdrop-filter: blur(6px);
+}
+
+/* =====================================================
+   JOIN BOX
+===================================================== */
+
+.join-box {
+    position: relative;
+
+    width: min(430px, 100%);
+
+    padding: 32px;
+
+    text-align: center;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #170607,
+            #0d0d0d
+        );
+
+    border: 1px solid rgba(229,9,20,0.65);
+
+    box-shadow:
+        0 30px 90px rgba(0,0,0,0.8),
+        0 0 50px rgba(229,9,20,0.18);
+
+    transform:
+        translateY(20px)
+        scale(0.95);
+
+    transition: 0.3s ease;
+}
+
+.join-modal.show .join-box {
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+/* =====================================================
+   CLOSE BUTTON
+===================================================== */
+
+.join-close {
+    position: absolute;
+
+    top: 11px;
+    right: 12px;
+
+    width: 35px;
+    height: 35px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.06);
+
+    color: #fff;
+
+    font-size: 24px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.join-close:hover {
+    background: #e50914;
+
+    transform: rotate(90deg);
+}
+
+/* =====================================================
+   JOIN ICON
+===================================================== */
+
+.join-icon {
+    width: 60px;
+    height: 60px;
+
+    margin: 0 auto 16px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #e50914;
+
+    font-size: 29px;
+
+    box-shadow:
+        0 10px 35px rgba(229,9,20,0.35);
+}
+
+.join-box .small-title {
+    margin-bottom: 6px;
+}
+
+.join-box h2 {
+    font-size: 25px;
+
+    font-weight: 800;
+}
+
+.join-box > p:not(.join-note) {
+    max-width: 350px;
+
+    margin: 10px auto 20px;
+
+    color: #aaa;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+/* =====================================================
+   WHATSAPP LINKS
+===================================================== */
+
+.whatsapp-list {
+    display: grid;
+
+    gap: 10px;
+}
+
+.whatsapp-link {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 14px 16px;
+
+    text-decoration: none;
+
+    color: #fff;
+
+    background:
+        linear-gradient(
+            90deg,
+            #21080a,
+            #160607
+        );
+
+    border: 1px solid rgba(229,9,20,0.35);
+
+    border-radius: 11px;
+
+    transition: 0.25s ease;
+}
+
+.whatsapp-link:hover {
+    background: #e50914;
+
+    border-color: #e50914;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(229,9,20,0.25);
+}
+
+.whatsapp-link span {
+    color: #bbb;
+
+    font-size: 11px;
+}
+
+.whatsapp-link strong {
+    font-size: 12px;
+}
+
+.whatsapp-link:hover span {
+    color: #fff;
+}
+
+.join-note {
+    margin-top: 14px !important;
+
+    color: #666 !important;
+
+    font-size: 9px !important;
+}
+
+/* =====================================================
+   ANIMATION
+===================================================== */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+
+    .header {
+        padding: 0 4%;
+    }
+
+    .nav-bar {
+        gap: 10px;
+    }
+
+    .nav-list > li > a {
+        padding: 9px 8px;
+
+        font-size: 12px;
+    }
+
+    .Home {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+
+    .Home-movies {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+
+    .movie-card {
+        flex-basis: 160px;
+
+        width: 160px;
+
+        height: 240px;
+    }
+
+    .movie-tools {
+        flex-wrap: wrap;
+    }
+
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .header {
+        min-height: 70px;
+
+        padding: 12px 5%;
+
+        flex-wrap: wrap;
+
+        gap: 8px;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .nav-bar {
+        width: 100%;
+
+        justify-content: space-between;
+
+        gap: 5px;
+    }
+
+    .nav-list {
+        overflow-x: auto;
+
+        max-width: 60%;
+
+        scrollbar-width: none;
+    }
+
+    .nav-list::-webkit-scrollbar {
+        display: none;
+    }
+
+    .nav-list > li > a {
+        padding: 7px;
+
+        font-size: 11px;
+
+        white-space: nowrap;
+    }
+
+    .nav-buttons {
+        gap: 5px;
+    }
+
+    .login,
+    .join-us {
+        padding: 7px 10px;
+
+        font-size: 10px;
+    }
+
+    .dropdown {
+        display: none;
+    }
+
+    .Home {
+        min-height: 100vh;
+
+        padding:
+            120px 5% 55px;
+    }
+
+    .home-bg {
+        filter: blur(3px);
+    }
+
+    .welcome {
+        font-size: 43px;
+
+        letter-spacing: -1.5px;
+    }
+
+    .ph {
+        font-size: 13px;
+
+        line-height: 1.7;
+    }
+
+    .hero-buttons {
+        margin-top: 25px;
+    }
+
+    .watch-btn,
+    .explore-btn {
+        padding: 10px 14px;
+
+        font-size: 11px;
+    }
+
+    .hero-stats {
+        gap: 25px;
+
+        margin-top: 28px;
+    }
+
+    /* Trending */
+
+    .Home-movies {
+        padding:
+            65px 5% 70px;
+    }
+
+    .section-title {
+        align-items: center;
+    }
+
+    .trending h2 {
+        font-size: 22px;
+    }
+
+    .movie-tools {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        padding: 11px;
+    }
+
+    .movie-search {
+        min-width: 0;
+
+        width: 100%;
+    }
+
+    .filter-group {
+        width: 100%;
+    }
+
+    .filter-group select {
+        width: 50%;
+
+        min-width: 0;
+    }
+
+    .image-slider {
+        gap: 12px;
+    }
+
+    .movie-card {
+        flex-basis: 135px;
+
+        width: 135px;
+
+        height: 200px;
+    }
+
+    /* About */
+
+    .about-section {
+        padding: 70px 5%;
+    }
+
+    /* Modal */
+
+    .join-modal {
+        padding: 15px;
+    }
+
+    .join-box {
+        padding: 26px 18px;
+    }
+
+    .join-box h2 {
+        font-size: 22px;
+    }
+
+}
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 400px) {
+
+    .logo {
+        font-size: 21px;
+    }
+
+    .nav-list > li > a {
+        padding: 6px 5px;
+
+        font-size: 10px;
+    }
+
+    .welcome {
+        font-size: 35px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .hero-stats {
+        gap: 20px;
+    }
+
+    .movie-card {
+        flex-basis: 120px;
+
+        width: 120px;
+
+        height: 180px;
+    }
+
+    .movie-info h3 {
+        font-size: 11px;
+    }
+
+    .movie-info p {
+        font-size: 8px;
+    }
+
+    .join-box {
+        padding: 23px 14px;
+    }
+
+    .join-box h2 {
+        font-size: 20px;
+    }
+
+    .whatsapp-link {
+        padding: 12px;
+    }
+
+}
+
+
+
+/* =====================================================
+   FILTERED CARD
+   KEEP ORIGINAL POSITION
+===================================================== */
+
+#normalGrid .normal-card {
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease,
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+/*
+   Hidden cards keep their original space.
+
+   So when Action is selected,
+   other cards don't move into their place.
+*/
+
+#normalGrid .normal-card.film-hidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   NO FILMS FOUND
+===================================================== */
+
+#normalGrid .movie-empty {
+    display: none;
+
+    width: 100%;
+    min-height: 200px;
+
+    flex: 0 0 100%;
+
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    padding: 45px 20px;
+
+    text-align: center;
+
+    border: 1px dashed
+        rgba(255,255,255,0.12);
+
+    border-radius: 14px;
+
+    background:
+        rgba(255,255,255,0.025);
+}
+
+
+#normalGrid .movie-empty.show {
+    display: flex;
+}
+
+
+#normalGrid .movie-empty > div {
+    font-size: 38px;
+}
+
+
+#normalGrid .movie-empty h3 {
+    margin-top: 10px;
+
+    font-size: 17px;
+
+    color: #fff;
+}
+
+
+#normalGrid .movie-empty p {
+    margin-top: 6px;
+
+    color: #777;
+
+    font-size: 11px;
+}
+
+
+/* =====================================================
+   NORMAL FILM FILTER
+   Keep original card positions
+===================================================== */
+
+#normalGrid .normal-card.film-hidden {
+
+    visibility: hidden;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+}
+
+
+/* =====================================================
+   NO FILMS FOUND
+===================================================== */
+
+#normalGrid .movie-empty {
+
+    display: none;
+
+}
+
+
+#normalGrid .movie-empty.show {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 100%;
+
+    min-height: 190px;
+
+    text-align: center;
+
+}
+
+
+#normalGrid .movie-empty.show h3 {
+
+    margin: 10px 0 5px;
+
+}
+
+
+#normalGrid .movie-empty.show p {
+
+    margin: 0;
+
+    opacity: 0.7;
+
+}
+
+
+/* =====================================================
+   FILM ZONE - MODERN IMAGE SLIDER
+===================================================== */
+
+.image-slider {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    padding: 10px 4px 25px;
+
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+
+    scrollbar-width: none;
+
+    -webkit-overflow-scrolling: touch;
+
+    overscroll-behavior-x: contain;
+}
+
+
+/* Hide scrollbar */
+
+.image-slider::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* =====================================================
+   MOVIE CARD
+===================================================== */
+
+.image-slider .movie-card {
+    flex: 0 0 190px;
+
+    width: 190px;
+    height: 285px;
+
+    scroll-snap-align: start;
+
+    position: relative;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    background: #151515;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        opacity 0.3s ease;
+}
+
+
+/* Hover */
+
+.image-slider .movie-card:hover {
+
+    transform: translateY(-8px) scale(1.02);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.55);
+}
+
+
+/* =====================================================
+   MOVIE IMAGE
+===================================================== */
+
+.image-slider .movie-card img {
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.5s ease,
+        filter 0.3s ease;
+}
+
+
+.image-slider .movie-card:hover img {
+
+    transform: scale(1.08);
+
+    filter: brightness(0.72);
+}
+
+
+/* =====================================================
+   DARK GRADIENT
+===================================================== */
+
+.image-slider .movie-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 55%;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,0.95),
+            rgba(0,0,0,0.45),
+            transparent
+        );
+}
+
+
+/* =====================================================
+   MOVIE INFO
+===================================================== */
+
+.image-slider .movie-info {
+
+    position: absolute;
+
+    left: 14px;
+    right: 10px;
+    bottom: 12px;
+
+    z-index: 2;
+}
+
+
+.image-slider .movie-info h3 {
+
+    margin: 0 0 5px;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+.image-slider .movie-info p {
+
+    margin: 0;
+
+    font-size: 11px;
+
+    color: rgba(255,255,255,0.72);
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+/* =====================================================
+   TRENDING BADGE
+===================================================== */
+
+.trending-badge {
+
+    position: absolute;
+
+    top: 10px;
+    left: 10px;
+
+    z-index: 5;
+
+    padding: 6px 9px;
+
+    border-radius: 7px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    background: rgba(0,0,0,0.72);
+
+    backdrop-filter: blur(8px);
+
+    color: #fff;
+}
+
+
+/* =====================================================
+   HIDDEN FILTERED CARD
+===================================================== */
+
+#normalGrid .normal-card.film-hidden {
+
+    visibility: hidden;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .image-slider {
+
+        gap: 14px;
+
+        padding-bottom: 20px;
+    }
+
+
+    .image-slider .movie-card {
+
+        flex: 0 0 145px;
+
+        width: 145px;
+
+        height: 215px;
+
+        border-radius: 12px;
+    }
+
+
+    .image-slider .movie-info {
+
+        left: 10px;
+        bottom: 9px;
+    }
+
+
+    .image-slider .movie-info h3 {
+
+        font-size: 13px;
+    }
+
+
+    .image-slider .movie-info p {
+
+        font-size: 9px;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+
+    .image-slider {
+
+        gap: 12px;
+    }
+
+
+    .image-slider .movie-card {
+
+        flex: 0 0 125px;
+
+        width: 125px;
+
+        height: 185px;
+    }
+
+
+    .image-slider .movie-info h3 {
+
+        font-size: 12px;
+    }
+
+
+    .image-slider .movie-info p {
+
+        font-size: 8px;
+    }
+
+}
+
+
+/* =====================================================
+   FILM ZONE - FIXED RESPONSIVE IMAGE SLIDER
+===================================================== */
+
+.slider-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* =====================================================
+   SLIDER
+===================================================== */
+
+.image-slider {
+    width: 100%;
+    min-width: 0;
+
+    display: flex;
+    gap: 18px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    padding: 10px 5px 25px;
+
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    -webkit-overflow-scrolling: touch;
+
+    overscroll-behavior-x: contain;
+
+    /* Prevent cards from shrinking */
+    flex-wrap: nowrap;
+}
+
+.image-slider::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* =====================================================
+   MOVIE CARD
+===================================================== */
+
+.image-slider .movie-card {
+    flex: 0 0 190px;
+    width: 190px;
+    min-width: 190px;
+
+    height: 285px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 14px;
+
+    background: #151515;
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    cursor: pointer;
+
+    scroll-snap-align: start;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease,
+        opacity 0.3s ease;
+}
+
+
+/* =====================================================
+   IMAGE
+===================================================== */
+
+.image-slider .movie-card img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.45s ease,
+        filter 0.3s ease;
+}
+
+
+/* =====================================================
+   HOVER
+===================================================== */
+
+@media (hover: hover) {
+
+    .image-slider .movie-card:hover {
+        transform: translateY(-7px) scale(1.02);
+
+        border-color: #e50914;
+
+        box-shadow:
+            0 18px 40px rgba(0,0,0,0.6),
+            0 0 25px rgba(229,9,20,0.12);
+    }
+
+    .image-slider .movie-card:hover img {
+        transform: scale(1.07);
+
+        filter: brightness(0.72);
+    }
+
+}
+
+
+/* =====================================================
+   CARD GRADIENT
+===================================================== */
+
+.image-slider .movie-card::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 58%;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,0.96),
+            rgba(0,0,0,0.5),
+            transparent
+        );
+}
+
+
+/* =====================================================
+   MOVIE INFO
+===================================================== */
+
+.image-slider .movie-info {
+    position: absolute;
+
+    left: 12px;
+    right: 10px;
+    bottom: 11px;
+
+    z-index: 3;
+
+    padding: 0;
+}
+
+
+.image-slider .movie-info h3 {
+    margin: 0 0 4px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+.image-slider .movie-info p {
+    margin: 0;
+
+    color: rgba(255,255,255,0.72);
+
+    font-size: 10px;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+/* =====================================================
+   TRENDING BADGE
+===================================================== */
+
+.trending-badge {
+    position: absolute;
+
+    top: 10px;
+    left: 10px;
+
+    z-index: 5;
+
+    padding: 5px 8px;
+
+    border-radius: 7px;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    color: #fff;
+
+    background: rgba(0,0,0,0.72);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+
+/* =====================================================
+   SLIDER BUTTONS
+===================================================== */
+
+.slider-btn {
+    flex: 0 0 auto;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255,255,255,0.12);
+
+    border-radius: 50%;
+
+    background: rgba(15,15,15,0.92);
+
+    color: #fff;
+
+    font-size: 30px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    z-index: 10;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.slider-btn:hover {
+    background: #e50914;
+
+    border-color: #e50914;
+
+    transform: scale(1.08);
+}
+
+.slider-btn:active {
+    transform: scale(0.94);
+}
+
+
+/* =====================================================
+   FILTERED CARD
+===================================================== */
+
+#normalGrid .normal-card.film-hidden {
+    visibility: hidden;
+
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+
+.normal-film-tools{
+    padding-top: 100px;
+}
+/* =====================================================
+   EMPTY RESULT
+===================================================== */
+
+#normalGrid .movie-empty {
+    display: none;
+
+    width: 100%;
+    min-height: 190px;
+
+    flex: 0 0 100%;
+
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    padding: 40px 20px;
+
+    text-align: center;
+
+    border: 1px dashed rgba(255,255,255,0.12);
+
+    border-radius: 14px;
+
+    background: rgba(255,255,255,0.025);
+}
+
+#normalGrid .movie-empty.show {
+    display: flex;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .slider-wrapper {
+        gap: 7px;
+    }
+
+    .image-slider {
+        gap: 14px;
+    }
+
+    .image-slider .movie-card {
+        flex-basis: 165px;
+        min-width: 165px;
+        width: 165px;
+
+        height: 250px;
+    }
+
+    .slider-btn {
+        width: 38px;
+        height: 38px;
+
+        font-size: 27px;
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .slider-wrapper {
+        display: block;
+    }
+
+    .image-slider {
+        width: 100%;
+
+        gap: 13px;
+
+        padding:
+            8px 3px 20px;
+
+        scroll-snap-type: x mandatory;
+    }
+
+    .image-slider .movie-card {
+        flex: 0 0 145px;
+
+        min-width: 145px;
+        width: 145px;
+
+        height: 215px;
+
+        border-radius: 12px;
+    }
+
+    .image-slider .movie-info {
+        left: 9px;
+        right: 8px;
+        bottom: 9px;
+    }
+
+    .image-slider .movie-info h3 {
+        font-size: 12px;
+    }
+
+    .image-slider .movie-info p {
+        font-size: 8px;
+    }
+
+    /*
+       Mobile arrows are placed over
+       the slider instead of taking space.
+    */
+
+    .slider-btn {
+        position: absolute;
+
+        top: 50%;
+
+        transform: translateY(-50%);
+
+        width: 36px;
+        height: 36px;
+
+        font-size: 25px;
+
+        background: rgba(0,0,0,0.75);
+
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+    }
+
+    .slider-btn:hover {
+        transform: translateY(-50%) scale(1.05);
+    }
+
+    .slider-prev {
+        left: 5px;
+    }
+
+    .slider-next {
+        right: 5px;
+    }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+
+    .image-slider {
+        gap: 11px;
+    }
+
+    .image-slider .movie-card {
+        flex: 0 0 125px;
+
+        min-width: 125px;
+        width: 125px;
+
+        height: 185px;
+
+        border-radius: 11px;
+    }
+
+    .image-slider .movie-info {
+        left: 8px;
+        right: 6px;
+        bottom: 8px;
+    }
+
+    .image-slider .movie-info h3 {
+        font-size: 11px;
+    }
+
+    .image-slider .movie-info p {
+        font-size: 7px;
+    }
+
+    .trending-badge {
+        top: 7px;
+        left: 7px;
+
+        padding: 4px 6px;
+
+        font-size: 8px;
+    }
+
+    .slider-btn {
+        width: 32px;
+        height: 32px;
+
+        font-size: 22px;
+    }
+
+    .slider-prev {
+        left: 3px;
+    }
+
+    .slider-next {
+        right: 3px;
+    }
+}
+
+
+/* =====================================================
+   MOVIE PLAYER MODAL
+===================================================== */
+
+.movie-player-modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.88);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    z-index: 99999;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease;
+
+}
+
+
+.movie-player-modal.show {
+
+    opacity: 1;
+    visibility: visible;
+
+}
+
+
+.movie-player-box {
+
+    position: relative;
+
+    width: min(950px, 100%);
+
+    max-height: 92vh;
+
+    overflow-y: auto;
+
+    background: #111;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 25px 80px rgba(0,0,0,0.7);
+
+}
+
+
+.movie-player-close {
+
+    position: absolute;
+
+    top: 12px;
+    right: 12px;
+
+    width: 42px;
+    height: 42px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(0,0,0,0.75);
+
+    color: white;
+
+    font-size: 28px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    z-index: 5;
+
+}
+
+
+.movie-player-close:hover {
+
+    background: rgba(255,255,255,0.2);
+
+}
+
+
+.movie-video-wrapper {
+
+    width: 100%;
+
+    aspect-ratio: 16 / 9;
+
+    background: #000;
+
+}
+
+
+.movie-video {
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: contain;
+
+    background: #000;
+
+}
+
+
+.movie-player-info {
+
+    display: flex;
+
+    gap: 20px;
+
+    padding: 22px;
+
+}
+
+
+.movie-player-poster {
+
+    width: 130px;
+
+    min-width: 130px;
+
+    height: 190px;
+
+    overflow: hidden;
+
+    border-radius: 10px;
+
+    background: #222;
+
+}
+
+
+.movie-player-poster img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+}
+
+
+.movie-player-details {
+
+    flex: 1;
+
+}
+
+
+.movie-player-details h2 {
+
+    margin: 0 0 10px;
+
+    font-size: 28px;
+
+    color: #fff;
+
+}
+
+
+.movie-meta {
+
+    display: flex;
+
+    gap: 10px;
+
+    margin-bottom: 15px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.movie-meta span {
+
+    padding: 5px 12px;
+
+    border-radius: 20px;
+
+    background: #222;
+
+    color: #ddd;
+
+    font-size: 13px;
+
+}
+
+
+#playerDescription {
+
+    margin: 0;
+
+    color: #aaa;
+
+    line-height: 1.7;
+
+}
+
+
+body.modal-open {
+
+    overflow: hidden;
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .movie-player-modal {
+
+        padding: 10px;
+
+        align-items: center;
+
+    }
+
+
+    .movie-player-box {
+
+        width: 100%;
+
+        max-height: 95vh;
+
+        border-radius: 12px;
+
+    }
+
+
+    .movie-player-info {
+
+        flex-direction: column;
+
+        padding: 16px;
+
+        gap: 15px;
+
+    }
+
+
+    .movie-player-poster {
+
+        width: 100px;
+
+        min-width: 100px;
+
+        height: 145px;
+
+    }
+
+
+    .movie-player-details h2 {
+
+        font-size: 22px;
+
+    }
+
+
+    .movie-player-close {
+
+        width: 36px;
+        height: 36px;
+
+        font-size: 24px;
+
+        top: 8px;
+        right: 8px;
+
+    }
+
+}
+
+
+/* =====================================================
+   ABOUT
+===================================================== */
+
+.about-section {
+    min-height: 500px;
+    padding: 100px 6%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            180deg,
+            #050505,
+            #0c0c0c
+        );
+
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.about-content {
+    width: 100%;
+    max-width: 700px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.about-content h2 {
+    margin-top: 10px;
+
+    font-size: clamp(35px, 5vw, 60px);
+
+    line-height: 1.1;
+    letter-spacing: -2px;
+}
+
+.about-content h2 span {
+    color: #e50914;
+}
+
+.about-content p {
+    max-width: 600px;
+    margin: 20px auto 0;
+
+    color: #999;
+
+    line-height: 1.8;
+    font-size: 15px;
+}
+
+
+/* =====================================================
+   FILM ZONE MOBILE LEFT MENU
+===================================================== */
+
+/* Hamburger hidden on desktop */
+.menu-toggle {
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    padding: 0;
+
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 8px;
+
+    background: rgba(255,255,255,0.06);
+
+    color: #fff;
+
+    cursor: pointer;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 20px;
+}
+
+
+/* Mobile buttons hidden */
+.mobile-buttons {
+    display: none;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    /* HEADER */
+    .header {
+        height: 65px;
+        min-height: 65px;
+
+        padding: 0 5%;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        position: fixed;
+
+        top: 0;
+        left: 0;
+        right: 0;
+
+        z-index: 10000;
+    }
+
+
+    /* LOGO */
+    .logo {
+        font-size: 22px;
+        white-space: nowrap;
+    }
+
+
+    /* NAV BAR */
+    .nav-bar {
+        display: flex;
+        align-items: center;
+
+        width: auto;
+        height: 100%;
+    }
+
+
+    /* =================================================
+       HAMBURGER
+    ================================================= */
+
+    .menu-toggle {
+        display: flex;
+
+        position: relative;
+
+        z-index: 10002;
+    }
+
+
+    .menu-toggle i {
+        transition: transform 0.25s ease;
+    }
+
+
+    /* =================================================
+       LEFT SIDE MENU
+    ================================================= */
+
+    .nav-list {
+        position: fixed;
+
+        top: 0;
+        left: 0;
+
+        width: 280px;
+        max-width: 82vw;
+
+        height: 100vh;
+
+        margin: 0;
+        padding: 90px 20px 25px;
+
+        box-sizing: border-box;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 5px;
+
+        list-style: none;
+
+        background: rgba(12,12,12,0.98);
+
+        border-right: 1px solid rgba(255,255,255,0.10);
+
+        box-shadow: 15px 0 40px rgba(0,0,0,0.55);
+
+        overflow-y: auto;
+
+        /* CLOSED */
+        transform: translateX(-100%);
+
+        transition: transform 0.3s ease;
+
+        z-index: 10001;
+    }
+
+
+    /* OPEN */
+    .nav-list.menu-open {
+        transform: translateX(0);
+    }
+
+
+    /* =================================================
+       MENU ITEMS
+    ================================================= */
+
+    .nav-list > li {
+        width: 100%;
+    }
+
+
+    .nav-list > li > a {
+        display: flex;
+
+        align-items: center;
+        justify-content: space-between;
+
+        width: 100%;
+
+        min-height: 48px;
+
+        padding: 12px 14px;
+
+        box-sizing: border-box;
+
+        color: #ddd;
+
+        font-size: 14px;
+
+        text-decoration: none;
+
+        border-radius: 8px;
+
+        transition: 0.2s ease;
+    }
+
+
+    .nav-list > li > a:hover {
+        background: rgba(229,9,20,0.12);
+
+        color: #fff;
+    }
+
+
+    /* =================================================
+       DROPDOWN
+    ================================================= */
+
+    .dropdown-parent:hover .dropdown {
+        display: none;
+    }
+
+
+    .dropdown {
+        position: static;
+
+        width: 100%;
+
+        margin: 3px 0 5px;
+
+        padding: 5px;
+
+        display: none;
+
+        background: rgba(255,255,255,0.04);
+
+        border-radius: 8px;
+
+        box-shadow: none;
+
+        opacity: 1;
+
+        visibility: visible;
+
+        transform: none;
+    }
+
+
+    /* OPEN DROPDOWN */
+    .dropdown-parent.mobile-dropdown-open .dropdown {
+        display: block;
+    }
+
+
+    .dropdown li {
+        width: 100%;
+    }
+
+
+    .dropdown li a {
+        display: block;
+
+        width: 100%;
+
+        padding: 10px 14px;
+
+        box-sizing: border-box;
+
+        color: #aaa;
+
+        font-size: 13px;
+
+        text-decoration: none;
+
+        border-radius: 6px;
+    }
+
+
+    .dropdown li a:hover {
+        background: rgba(229,9,20,0.12);
+
+        color: #fff;
+    }
+
+
+    /* =================================================
+       MOBILE LOGIN + JOIN
+    ================================================= */
+
+    .nav-buttons {
+        display: none;
+    }
+
+
+    .mobile-buttons {
+        display: flex !important;
+
+        gap: 8px;
+
+        margin-top: 15px;
+
+        padding-top: 15px;
+
+        border-top: 1px solid rgba(255,255,255,0.10);
+    }
+
+
+    .mobile-buttons button {
+        flex: 1;
+
+        height: 42px;
+
+        border-radius: 8px;
+
+        font-family: inherit;
+
+        font-size: 12px;
+
+        cursor: pointer;
+    }
+
+
+    .mobile-buttons .login {
+        background: transparent;
+
+        color: #fff;
+
+        border: 1px solid rgba(255,255,255,0.20);
+    }
+
+
+    .mobile-buttons .join-us {
+        background: #e50914;
+
+        color: #fff;
+
+        border: 1px solid #e50914;
+    }
+
+
+    /* =================================================
+       DARK OVERLAY
+    ================================================= */
+
+    .nav-list::after {
+        content: "";
+
+        position: fixed;
+
+        top: 0;
+        left: 280px;
+
+        width: 100vw;
+        height: 100vh;
+
+        background: rgba(0,0,0,0.55);
+
+        z-index: -1;
+
+        opacity: 0;
+
+        pointer-events: none;
+
+        transition: opacity 0.3s ease;
+    }
+
+
+    .nav-list.menu-open::after {
+        opacity: 1;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL PHONE
+===================================================== */
+
+@media (max-width: 400px) {
+
+    .header {
+        padding: 0 4%;
+    }
+
+    .logo {
+        font-size: 19px;
+    }
+
+    .menu-toggle {
+        width: 38px;
+        height: 38px;
+
+        font-size: 18px;
+    }
+
+    .nav-list {
+        width: 260px;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE MENU LOGO
+===================================================== */
+
+.mobile-menu-logo {
+    display: none;
+}
+
+
+@media (max-width: 700px) {
+
+    .mobile-menu-logo {
+        display: block;
+
+        position: fixed;
+
+        top: 0;
+        left: 0;
+
+        width: 280px;
+        max-width: 82vw;
+
+        height: 70px;
+
+        padding: 0 22px;
+
+        box-sizing: border-box;
+
+        display: flex;
+        align-items: center;
+
+        background: rgba(12,12,12,0.99);
+
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+
+        z-index: 10004;
+
+        transform: translateX(-100%);
+
+        transition: transform 0.3s ease;
+    }
+
+
+    .mobile-menu-logo a {
+        text-decoration: none;
+
+        font-family: "Poppins", sans-serif;
+
+        font-size: 23px;
+
+        font-weight: 800;
+
+        letter-spacing: -0.5px;
+    }
+
+
+    .mobile-menu-logo span {
+        color: #ffffff;
+    }
+
+
+    .mobile-menu-logo strong {
+        color: #e50914;
+
+        font-weight: 800;
+    }
+
+
+    /* LOGO SHOW WHEN MENU OPEN */
+
+    .nav-list.menu-open ~ .mobile-menu-logo {
+        transform: translateX(0);
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    .mobile-menu-logo {
+        transform: translateX(-100%);
+    }
+
+    .mobile-menu-logo.show {
+        transform: translateX(0);
+    }
+
+}
+
+
+.film-section{
+    padding-top: 80px;
+}
+
+/* Browse Films - Center */
+.normal-film-tools .section-title {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+}
+
+.normal-film-tools .section-title > div {
+    width: 100%;
+    text-align: center;
+}
+
+.normal-film-tools .browse-films {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+/* Clear Filters එක දකුණේම තියාගන්න */
+.normal-film-tools .see-all {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@media (max-width: 700px) {
+    .normal-film-tools .section-title {
+        justify-content: center;
+    }
+
+    .normal-film-tools .browse-films {
+        text-align: center;
+    }
+
+    .normal-film-tools .see-all {
+        position: static;
+        transform: none;
+        margin-top: 10px;
+    }
+}
+
+
+
+/* =====================================================
+   FILTER DROPDOWN - MODERN FILM ZONE STYLE
+===================================================== */
+
+.filter-group {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.filter-group select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    min-width: 160px;
+    height: 46px;
+
+    padding: 0 42px 0 15px;
+
+    color: #eeeeee;
+    background:
+        linear-gradient(135deg, #171717, #0d0d0d);
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 11px;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+
+    cursor: pointer;
+    outline: none;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.25);
+
+    transition: all 0.3s ease;
+
+    /* Custom arrow */
+    background-image:
+        linear-gradient(45deg, transparent 50%, #e50914 50%),
+        linear-gradient(135deg, #e50914 50%, transparent 50%);
+    background-position:
+        calc(100% - 18px) 20px,
+        calc(100% - 13px) 20px;
+    background-size:
+        5px 5px,
+        5px 5px;
+    background-repeat: no-repeat;
+}
+
+
+/* Hover */
+.filter-group select:hover {
+    border-color: rgba(229, 9, 20, 0.55);
+
+    background-color: #151515;
+
+    box-shadow:
+        0 0 18px rgba(229, 9, 20, 0.10);
+}
+
+
+/* Click / Focus */
+.filter-group select:focus {
+    border-color: #e50914;
+
+    box-shadow:
+        0 0 0 3px rgba(229, 9, 20, 0.10),
+        0 0 20px rgba(229, 9, 20, 0.12);
+}
+
+
+/* Dropdown options */
+.filter-group select option {
+    background: #111111;
+    color: #eeeeee;
+    padding: 12px;
+}
+
+
+/* Selected option */
+.filter-group select option:checked {
+    background: #e50914;
+    color: #ffffff;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .filter-group {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+
+    .filter-group select {
+        width: 100%;
+        min-width: 0;
+        height: 44px;
+
+        padding-left: 12px;
+        padding-right: 35px;
+
+        font-size: 11px;
+
+        background-position:
+            calc(100% - 16px) 19px,
+            calc(100% - 11px) 19px;
+    }
+}
+
+
+@media (max-width: 420px) {
+
+    .filter-group {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-group select {
+        height: 43px;
+    }
+}
+
+/* =====================================================
+   CUSTOM FILTER DROPDOWN
+===================================================== */
+
+.custom-filter {
+    position: relative;
+    width: 160px;
+}
+
+/* Main button */
+.custom-filter-btn {
+    width: 100%;
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 14px;
+
+    color: #fff;
+    background: #e50914;
+
+    border: 1px solid rgba(255,255,255,.85);
+    border-radius: 10px;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all .25s ease;
+}
+
+.custom-filter-btn:hover {
+    background: #f20b16;
+    box-shadow: 0 0 18px rgba(229,9,20,.25);
+}
+
+/* Arrow */
+.filter-arrow {
+    font-size: 17px;
+    transition: transform .25s ease;
+}
+
+/* Rotate arrow */
+.custom-filter.open .filter-arrow {
+    transform: rotate(180deg);
+}
+
+
+/* =====================================================
+   DROPDOWN MENU
+===================================================== */
+
+.custom-filter-menu {
+    position: absolute;
+
+    top: calc(100% + 8px);
+    left: 0;
+
+    width: 100%;
+
+    padding: 7px;
+
+    background: rgba(15,15,15,.98);
+
+    border: 1px solid rgba(255,255,255,.18);
+    border-radius: 12px;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.65),
+        0 0 20px rgba(229,9,20,.08);
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: translateY(-8px);
+
+    transition:
+        opacity .25s ease,
+        transform .25s ease,
+        visibility .25s ease;
+
+    z-index: 9999;
+}
+
+
+/* Open */
+.custom-filter.open .custom-filter-menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    transform: translateY(0);
+}
+
+
+/* =====================================================
+   OPTIONS
+===================================================== */
+
+.custom-filter-menu button {
+    position: relative;
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    padding: 10px 12px;
+
+    color: #aaa;
+    background: transparent;
+
+    border: none;
+    border-radius: 8px;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    text-align: left;
+
+    cursor: pointer;
+
+    transition: all .2s ease;
+}
+
+
+/* Hover */
+.custom-filter-menu button:hover {
+    color: #fff;
+
+    background: linear-gradient(
+        90deg,
+        rgba(229,9,20,.25),
+        rgba(229,9,20,.08)
+    );
+
+    padding-left: 17px;
+}
+
+
+/* Red left line */
+.custom-filter-menu button::before {
+    content: "";
+
+    position: absolute;
+
+    left: 6px;
+    top: 50%;
+
+    width: 3px;
+    height: 0;
+
+    background: #e50914;
+    border-radius: 5px;
+
+    transform: translateY(-50%);
+
+    transition: height .2s ease;
+}
+
+.custom-filter-menu button:hover::before {
+    height: 55%;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .custom-filter {
+        width: 100%;
+    }
+
+    .custom-filter-btn {
+        height: 44px;
+    }
+
+    .custom-filter-menu {
+        width: 100%;
+    }
+}
+
+
+
+/* =====================================================
+   FILTER CUSTOM DROPDOWNS
+   Film Zone
+===================================================== */
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+/* =====================================================
+   DROPDOWN CONTAINER
+===================================================== */
+
+.filter-dropdown {
+    position: relative;
+    width: 160px;
+    z-index: 100;
+}
+
+
+/* =====================================================
+   MAIN BUTTON
+===================================================== */
+
+.filter-dropdown-btn {
+    width: 100%;
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 14px;
+
+    color: #fff;
+
+    background: #e50914;
+
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    border-radius: 10px;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    outline: none;
+
+    transition:
+        background 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.2s ease;
+}
+
+
+/* Hover */
+
+.filter-dropdown-btn:hover {
+    background: #f20b16;
+
+    box-shadow:
+        0 0 18px rgba(229, 9, 20, 0.25);
+}
+
+
+/* Click */
+
+.filter-dropdown.open .filter-dropdown-btn {
+    background: #e50914;
+
+    border-color: #fff;
+
+    box-shadow:
+        0 0 0 2px rgba(255, 255, 255, 0.10),
+        0 0 20px rgba(229, 9, 20, 0.20);
+}
+
+
+/* =====================================================
+   ARROW
+===================================================== */
+
+.filter-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 17px;
+    line-height: 1;
+
+    color: #fff;
+
+    transition:
+        transform 0.25s ease,
+        color 0.25s ease;
+}
+
+
+.filter-dropdown.open .filter-arrow {
+    transform: rotate(180deg);
+}
+
+
+/* =====================================================
+   DROPDOWN MENU
+===================================================== */
+
+.filter-dropdown-menu {
+    position: absolute;
+
+    top: calc(100% + 8px);
+    left: 0;
+
+    width: 100%;
+
+    padding: 7px;
+
+    background: rgba(15, 15, 15, 0.98);
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 13px;
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.70),
+        0 0 25px rgba(229, 9, 20, 0.08);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: translateY(-8px) scale(0.98);
+
+    transform-origin: top center;
+
+    transition:
+        opacity 0.22s ease,
+        visibility 0.22s ease,
+        transform 0.22s ease;
+
+    z-index: 9999;
+}
+
+
+/* Red top line */
+
+.filter-dropdown-menu::before {
+    content: "";
+
+    position: absolute;
+
+    top: -1px;
+    left: 25%;
+
+    width: 50%;
+    height: 2px;
+
+    background: #e50914;
+
+    border-radius: 0 0 10px 10px;
+
+    box-shadow:
+        0 0 12px rgba(229, 9, 20, 0.55);
+}
+
+
+/* OPEN */
+
+.filter-dropdown.open .filter-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    transform: translateY(0) scale(1);
+}
+
+
+/* =====================================================
+   OPTIONS
+===================================================== */
+
+.filter-dropdown-menu button {
+    position: relative;
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    padding: 10px 12px;
+
+    color: #aaa;
+
+    background: transparent;
+
+    border: none;
+    border-radius: 8px;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        padding-left 0.2s ease;
+}
+
+
+/* Option hover */
+
+.filter-dropdown-menu button:hover {
+    color: #fff;
+
+    padding-left: 18px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(229, 9, 20, 0.28),
+            rgba(229, 9, 20, 0.06)
+        );
+}
+
+
+/* Left red indicator */
+
+.filter-dropdown-menu button::before {
+    content: "";
+
+    position: absolute;
+
+    left: 6px;
+    top: 50%;
+
+    width: 3px;
+    height: 0;
+
+    background: #e50914;
+
+    border-radius: 5px;
+
+    transform: translateY(-50%);
+
+    transition: height 0.2s ease;
+}
+
+
+.filter-dropdown-menu button:hover::before {
+    height: 55%;
+}
+
+
+/* Selected */
+
+.filter-dropdown-menu button.selected {
+    color: #fff;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(229, 9, 20, 0.22),
+            rgba(229, 9, 20, 0.05)
+        );
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .filter-group {
+        width: 100%;
+
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 8px;
+    }
+
+    .filter-dropdown {
+        width: 100%;
+    }
+
+    .filter-dropdown-btn {
+        height: 44px;
+
+        padding: 0 12px;
+
+        font-size: 11px;
+    }
+
+    .filter-dropdown-menu {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 420px) {
+
+    .filter-group {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-dropdown-btn {
+        height: 43px;
+    }
+}
+
+.filter-dropdown-btn {
+    
+    color: #fff;
+     background: #101010;
+    border-radius: 20px;
+    border-color: rgb(104, 52, 52);
+
+
+}
+
+.filter-dropdown.open .filter-dropdown-btn {
+    background: #101010;
+    border-color: #ee1e1e;
+}

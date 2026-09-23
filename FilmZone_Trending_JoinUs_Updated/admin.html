@@ -1,0 +1,1154 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Film Zone | Admin Panel</title>
+
+    <link
+        rel="stylesheet"
+        href="admin.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- ==================================================
+     MOBILE OVERLAY
+================================================== -->
+
+<div
+    class="sidebar-overlay"
+    id="sidebarOverlay"
+></div>
+
+
+<!-- ==================================================
+     SIDEBAR
+================================================== -->
+
+<aside class="sidebar" id="sidebar">
+
+    <div class="brand">
+
+        <div class="brand-icon">
+            FZ
+        </div>
+
+        <div>
+
+            <strong>Film Zone</strong>
+
+            <small>Admin Studio</small>
+
+        </div>
+
+    </div>
+
+
+    <nav class="sidebar-nav">
+
+        <button
+            class="nav-link active"
+            data-section="dashboard"
+        >
+            <span>▦</span>
+            Dashboard
+        </button>
+
+
+        <button
+            class="nav-link"
+            data-section="films"
+        >
+            <span>🎬</span>
+            Films
+        </button>
+
+
+        <button
+            class="nav-link"
+            data-section="add-film"
+        >
+            <span>＋</span>
+            Add Film
+        </button>
+
+
+        <button
+            class="nav-link"
+            data-section="settings"
+        >
+            <span>⚙</span>
+            Settings
+        </button>
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+        <div class="admin-mini">
+
+            <div class="admin-avatar">
+                A
+            </div>
+
+            <div>
+
+                <strong>Administrator</strong>
+
+                <small>Film Zone Admin</small>
+
+            </div>
+
+        </div>
+
+
+        <button
+            class="logout-btn"
+            id="logoutBtn"
+        >
+            ⇥ Logout
+        </button>
+
+    </div>
+
+</aside>
+
+
+<!-- ==================================================
+     MAIN
+================================================== -->
+
+<main class="main">
+
+
+    <!-- TOPBAR -->
+
+    <header class="topbar">
+
+        <button
+            class="mobile-menu"
+            id="mobileMenu"
+        >
+            ☰
+        </button>
+
+
+        <div class="page-heading">
+
+            <span>Admin Panel</span>
+
+            <h1 id="pageTitle">
+                Dashboard
+            </h1>
+
+        </div>
+
+
+        <div class="top-actions">
+
+            <button
+                class="icon-btn"
+                id="refreshBtn"
+                title="Refresh"
+            >
+                ↻
+            </button>
+
+
+            <button
+                class="view-site-btn"
+                id="viewSiteBtn"
+            >
+                ↗ View Site
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- ==================================================
+         DASHBOARD
+    ================================================== -->
+
+    <section
+        class="content-section active"
+        id="dashboard"
+    >
+
+        <div class="welcome">
+
+            <div>
+
+                <span class="eyebrow">
+                    FILM ZONE ADMIN
+                </span>
+
+                <h2>
+                    Welcome back 👋
+                </h2>
+
+                <p>
+                    Manage your movies, posters,
+                    videos and content from one place.
+                </p>
+
+            </div>
+
+
+            <button
+                class="primary-btn"
+                data-open-section="add-film"
+            >
+                ＋ Add New Film
+            </button>
+
+        </div>
+
+
+        <!-- STAT CARDS -->
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    🎬
+                </div>
+
+                <div>
+
+                    <span>Total Films</span>
+
+                    <strong id="totalFilms">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    🔥
+                </div>
+
+                <div>
+
+                    <span>Trending Films</span>
+
+                    <strong id="trendingFilms">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    🎭
+                </div>
+
+                <div>
+
+                    <span>Categories</span>
+
+                    <strong id="totalCategories">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    ⭐
+                </div>
+
+                <div>
+
+                    <span>Average Rating</span>
+
+                    <strong id="averageRating">
+                        0.0
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- RECENT FILMS -->
+
+        <div class="section-card">
+
+            <div class="section-card-head">
+
+                <div>
+
+                    <span class="eyebrow">
+                        LIBRARY
+                    </span>
+
+                    <h3>
+                        Recently Added
+                    </h3>
+
+                </div>
+
+
+                <button
+                    class="text-btn"
+                    data-open-section="films"
+                >
+                    View All →
+                </button>
+
+            </div>
+
+
+            <div
+                class="recent-films"
+                id="recentFilms"
+            ></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================================================
+         FILMS
+    ================================================== -->
+
+    <section
+        class="content-section"
+        id="films"
+    >
+
+        <div class="section-header">
+
+            <div>
+
+                <span class="eyebrow">
+                    MOVIE LIBRARY
+                </span>
+
+                <h2>
+                    All Films
+                </h2>
+
+                <p>
+                    Search and manage all your films.
+                </p>
+
+            </div>
+
+
+            <button
+                class="primary-btn"
+                data-open-section="add-film"
+            >
+                ＋ Add Film
+            </button>
+
+        </div>
+
+
+        <div class="toolbar">
+
+            <div class="search-box">
+
+                <span>⌕</span>
+
+                <input
+                    type="search"
+                    id="filmSearch"
+                    placeholder="Search films..."
+                >
+
+            </div>
+
+
+            <select id="categorySort">
+
+                <option value="all">
+                    All Categories
+                </option>
+
+                <option value="action">
+                    Action
+                </option>
+
+                <option value="thriller">
+                    Thriller
+                </option>
+
+                <option value="romance">
+                    Romance
+                </option>
+
+                <option value="comedy">
+                    Comedy
+                </option>
+
+                <option value="horror">
+                    Horror
+                </option>
+
+                <option value="animation">
+                    Animation
+                </option>
+
+            </select>
+
+
+            <select id="typeSort">
+
+                <option value="all">
+                    All Types
+                </option>
+
+                <option value="movie">
+                    Movie
+                </option>
+
+                <option value="drama">
+                    Drama
+                </option>
+
+                <option value="series">
+                    TV Series
+                </option>
+
+                <option value="anime">
+                    Anime
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div
+            class="film-grid"
+            id="filmGrid"
+        ></div>
+
+
+        <div
+            class="empty-state"
+            id="filmEmpty"
+        >
+
+            <div>
+                🎬
+            </div>
+
+            <h3>
+                No films found
+            </h3>
+
+            <p>
+                Add your first film or change
+                your search filters.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================================================
+         ADD / EDIT FILM
+    ================================================== -->
+
+    <section
+        class="content-section"
+        id="add-film"
+    >
+
+        <div class="section-header">
+
+            <div>
+
+                <span class="eyebrow">
+                    CONTENT MANAGER
+                </span>
+
+                <h2 id="formTitle">
+                    Add New Film
+                </h2>
+
+                <p>
+                    Add or edit movie information.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <form
+            class="film-form"
+            id="filmForm"
+        >
+
+            <input
+                type="hidden"
+                id="filmId"
+            >
+
+
+            <!-- BASIC INFORMATION -->
+
+            <div class="form-card">
+
+                <div class="form-card-title">
+
+                    <span>01</span>
+
+                    <div>
+
+                        <h3>
+                            Basic Information
+                        </h3>
+
+                        <p>
+                            Enter the main movie details.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-grid">
+
+                    <div class="field full">
+
+                        <label>
+                            Film Title *
+                        </label>
+
+                        <input
+                            type="text"
+                            id="filmTitle"
+                            placeholder="Enter film title"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label>
+                            Category *
+                        </label>
+
+                        <select
+                            id="filmCategory"
+                            required
+                        >
+
+                            <option value="">
+                                Select category
+                            </option>
+
+                            <option value="action">
+                                Action
+                            </option>
+
+                            <option value="thriller">
+                                Thriller
+                            </option>
+
+                            <option value="romance">
+                                Romance
+                            </option>
+
+                            <option value="comedy">
+                                Comedy
+                            </option>
+
+                            <option value="horror">
+                                Horror
+                            </option>
+
+                            <option value="animation">
+                                Animation
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label>
+                            Type *
+                        </label>
+
+                        <select
+                            id="filmType"
+                            required
+                        >
+
+                            <option value="">
+                                Select type
+                            </option>
+
+                            <option value="movie">
+                                Movie
+                            </option>
+
+                            <option value="drama">
+                                Drama
+                            </option>
+
+                            <option value="series">
+                                TV Series
+                            </option>
+
+                            <option value="anime">
+                                Anime
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label>
+                            Release Year
+                        </label>
+
+                        <input
+                            type="number"
+                            id="filmYear"
+                            min="1900"
+                            max="2100"
+                            placeholder="2026"
+                        >
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label>
+                            Rating
+                        </label>
+
+                        <input
+                            type="number"
+                            id="filmRating"
+                            min="0"
+                            max="10"
+                            step="0.1"
+                            placeholder="8.5"
+                        >
+
+                    </div>
+
+
+                    <div class="field full">
+
+                        <label>
+                            Description
+                        </label>
+
+                        <textarea
+                            id="filmDescription"
+                            rows="5"
+                            placeholder="Write a short description about the film..."
+                        ></textarea>
+
+                    </div>
+
+
+                    <div class="field full">
+
+                        <label>
+                            Tags
+                        </label>
+
+                        <input
+                            type="text"
+                            id="filmTags"
+                            placeholder="action, adventure, superhero"
+                        >
+
+                        <small>
+                            Separate tags using commas.
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- MEDIA -->
+
+            <div class="form-card">
+
+                <div class="form-card-title">
+
+                    <span>02</span>
+
+                    <div>
+
+                        <h3>
+                            Media
+                        </h3>
+
+                        <p>
+                            Add poster and video.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="media-grid">
+
+
+                    <!-- POSTER -->
+
+                    <div class="upload-box">
+
+                        <div class="upload-label">
+
+                            <strong>
+                                🖼️ Poster
+                            </strong>
+
+                            <small>
+                                JPG, PNG or WEBP
+                            </small>
+
+                        </div>
+
+
+                        <label
+                            class="upload-area"
+                            for="posterInput"
+                        >
+
+                            <div
+                                class="poster-preview"
+                                id="posterPreview"
+                            >
+
+                                <span>
+                                    🖼️
+                                </span>
+
+                                <p>
+                                    Click to upload poster
+                                </p>
+
+                            </div>
+
+                        </label>
+
+
+                        <input
+                            type="file"
+                            id="posterInput"
+                            accept="image/*"
+                            hidden
+                        >
+
+                    </div>
+
+
+                    <!-- VIDEO -->
+
+                    <div class="upload-box">
+
+                        <div class="upload-label">
+
+                            <strong>
+                                🎥 Video
+                            </strong>
+
+                            <small>
+                                MP4, WebM, MOV
+                            </small>
+
+                        </div>
+
+
+                        <label
+                            class="upload-area video-upload"
+                            for="videoInput"
+                        >
+
+                            <div
+                                class="video-preview"
+                                id="videoPreview"
+                            >
+
+                                <span>
+                                    ▶
+                                </span>
+
+                                <p>
+                                    Click to select video
+                                </p>
+
+                                <small id="videoName">
+                                    No video selected
+                                </small>
+
+                            </div>
+
+                        </label>
+
+
+                        <input
+                            type="file"
+                            id="videoInput"
+                            accept="video/*"
+                            hidden
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PUBLISH SETTINGS -->
+
+            <div class="form-card">
+
+                <div class="form-card-title">
+
+                    <span>03</span>
+
+                    <div>
+
+                        <h3>
+                            Publishing
+                        </h3>
+
+                        <p>
+                            Control how the film appears
+                            on your website.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="publish-options">
+
+                    <label class="toggle-row">
+
+                        <div>
+
+                            <strong>
+                                🔥 Trending Film
+                            </strong>
+
+                            <small>
+                                Show this film in
+                                Popular Now / Trending.
+                            </small>
+
+                        </div>
+
+
+                        <span class="switch">
+
+                            <input
+                                type="checkbox"
+                                id="filmTrending"
+                            >
+
+                            <span></span>
+
+                        </span>
+
+                    </label>
+
+
+                    <label class="toggle-row">
+
+                        <div>
+
+                            <strong>
+                                👁️ Published
+                            </strong>
+
+                            <small>
+                                Make this film visible
+                                on the website.
+                            </small>
+
+                        </div>
+
+
+                        <span class="switch">
+
+                            <input
+                                type="checkbox"
+                                id="filmPublished"
+                                checked
+                            >
+
+                            <span></span>
+
+                        </span>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <!-- FORM ACTIONS -->
+
+            <div class="form-actions">
+
+                <button
+                    type="button"
+                    class="secondary-btn"
+                    id="cancelEdit"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="primary-btn"
+                    id="saveFilmBtn"
+                >
+                    ＋ Add Film
+                </button>
+
+            </div>
+
+        </form>
+
+    </section>
+
+
+    <!-- ==================================================
+         SETTINGS
+    ================================================== -->
+
+    <section
+        class="content-section"
+        id="settings"
+    >
+
+        <div class="section-header">
+
+            <div>
+
+                <span class="eyebrow">
+                    ADMIN SETTINGS
+                </span>
+
+                <h2>
+                    Settings
+                </h2>
+
+                <p>
+                    Manage basic Film Zone settings.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="settings-grid">
+
+            <div class="setting-card">
+
+                <div class="setting-icon">
+                    🎨
+                </div>
+
+                <h3>
+                    Website Appearance
+                </h3>
+
+                <p>
+                    Appearance settings can be
+                    connected here later.
+                </p>
+
+                <button
+                    class="secondary-btn"
+                    disabled
+                >
+                    Coming Soon
+                </button>
+
+            </div>
+
+
+            <div class="setting-card">
+
+                <div class="setting-icon">
+                    🔥
+                </div>
+
+                <h3>
+                    Trending
+                </h3>
+
+                <p>
+                    Manage which films appear
+                    in the trending section.
+                </p>
+
+                <button
+                    class="secondary-btn"
+                    data-open-section="films"
+                >
+                    Manage Films
+                </button>
+
+            </div>
+
+
+            <div class="setting-card">
+
+                <div class="setting-icon">
+                    ☁️
+                </div>
+
+                <h3>
+                    Firebase
+                </h3>
+
+                <p>
+                    Cloud database and storage
+                    will be connected later.
+                </p>
+
+                <button
+                    class="secondary-btn"
+                    disabled
+                >
+                    Not Connected
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<!-- ==================================================
+     FILM PREVIEW MODAL
+================================================== -->
+
+<div
+    class="preview-modal"
+    id="previewModal"
+>
+
+    <div class="preview-box">
+
+        <button
+            class="modal-close"
+            id="closePreview"
+        >
+            ×
+        </button>
+
+
+        <div
+            class="preview-media"
+            id="previewMedia"
+        ></div>
+
+
+        <div class="preview-content">
+
+            <span
+                class="preview-category"
+                id="previewCategory"
+            >
+                Action
+            </span>
+
+            <h2 id="previewTitle">
+                Film Title
+            </h2>
+
+            <div
+                class="preview-meta"
+                id="previewMeta"
+            ></div>
+
+            <p id="previewDescription"></p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ==================================================
+     TOAST
+================================================== -->
+
+<div
+    class="toast"
+    id="toast"
+></div>
+
+
+<script src="admin.js"></script>
+
+</body>
+
+</html>

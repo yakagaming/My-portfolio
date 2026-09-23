@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Film Zone</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+    <!-- Google Font -->
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="header">
+
+    <!-- LOGO -->
+    <a href="#home" class="logo">
+        Film <span>Zone</span>
+    </a>
+
+
+    <!-- NAVIGATION -->
+    <nav class="nav-bar">
+
+        <!-- MOBILE MENU BUTTON -->
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false"
+        >
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+
+        <!-- MOBILE LOGO -->
+        <div class="mobile-menu-logo">
+
+            <a href="#home">
+                <span>Film</span>
+                <strong>Zone</strong>
+            </a>
+
+        </div>
+
+
+        <!-- NAV MENU -->
+        <ul class="nav-list" id="navList">
+
+
+            <!-- HOME -->
+            <li>
+
+                <a href="#home">
+                    Home
+                </a>
+
+            </li>
+
+
+            <!-- ABOUT -->
+            <li>
+
+                <a href="#about">
+                    About
+                </a>
+
+            </li>
+
+
+            <!-- CATEGORY -->
+            <li class="dropdown-parent">
+
+                <a
+                    href="#"
+                    class="dropdown-toggle"
+                >
+                    Category
+                    <span class="arrow">⌄</span>
+                </a>
+
+
+                <ul class="dropdown">
+
+                    <li>
+                        <a href="#movies">Action</a>
+                    </li>
+
+                    <li>
+                        <a href="#movies">Thriller</a>
+                    </li>
+
+                    <li>
+                        <a href="#movies">Romance</a>
+                    </li>
+
+                    <li>
+                        <a href="#movies">Comedy</a>
+                    </li>
+
+                    <li>
+                        <a href="#movies">Horror</a>
+                    </li>
+
+                </ul>
+
+            </li>
+
+
+            <!-- TYPE -->
+            <li class="dropdown-parent">
+
+                <a
+                    href="#"
+                    class="dropdown-toggle"
+                >
+                    Type
+                    <span class="arrow">⌄</span>
+                </a>
+
+
+                <ul class="dropdown">
+
+                    <li>
+                        <a href="#movies">Movies</a>
+                    </li>
+
+                    <li>
+                        <a href="#movies">Dramas</a>
+                    </li>
+
+                    <li>
+                        <a href="#movies">TV Series</a>
+                    </li>
+
+                    <li>
+                        <a href="#movies">Anime</a>
+                    </li>
+
+                </ul>
+
+            </li>
+
+
+            <!-- MOBILE BUTTONS -->
+            <li class="mobile-buttons">
+
+                <a href="login.html" class="login">
+                Login
+                  </a>
+
+                  
+                <button
+                    class="join-us"
+                    onclick="joinUser()"
+                    type="button"
+                >
+                    Join Us
+                </button>
+
+            </li>
+
+        </ul>
+
+
+        <!-- DESKTOP BUTTONS -->
+        <div class="nav-buttons">
+
+         <a href="login.html" class="login">
+            Login
+                </a>
+
+
+            <button
+                class="join-us"
+                onclick="joinUser()"
+                type="button"
+            >
+                Join Us
+            </button>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main>
+
+
+<!-- =====================================================
+     HERO SECTION
+===================================================== -->
+
+<section
+    class="Home"
+    id="home"
+>
+
+
+    <!-- BACKGROUND -->
+
+    <div class="home-bg">
+
+        <img
+            src="img/tyson-moultrie-BQTHOGNHo08-unsplash.jpg"
+            alt=""
+        >
+
+    </div>
+
+
+    <!-- OVERLAY -->
+
+    <div class="home-overlay"></div>
+
+
+    <!-- HERO CONTENT -->
+
+    <div class="home-content">
+
+        <h1 class="welcome">
+
+            Watch Your
+
+            <span>
+                Film Zone 🎬
+            </span>
+
+        </h1>
+
+
+        <p class="ph">
+
+            Discover movies, dramas, TV series and
+            entertainment all in one place.
+            Enjoy your favorite stories anytime.
+
+        </p>
+
+
+        <!-- HERO BUTTONS -->
+
+        <div class="hero-buttons">
+
+            <button
+                class="watch-btn"
+                onclick="watchNow()"
+                type="button"
+            >
+                ▶ Watch Now
+            </button>
+
+
+            <button
+                class="explore-btn"
+                onclick="exploreMovies()"
+                type="button"
+            >
+                Explore Movies
+            </button>
+
+        </div>
+
+
+        <!-- HERO STATS -->
+
+        <div class="hero-stats">
+
+
+            <div class="stat">
+
+                <strong>
+                    100+
+                </strong>
+
+                <span>
+                    Movies
+                </span>
+
+            </div>
+
+
+            <div class="stat">
+
+                <strong>
+                    50+
+                </strong>
+
+                <span>
+                    Dramas
+                </span>
+
+            </div>
+
+
+            <div class="stat">
+
+                <strong>
+                    HD
+                </strong>
+
+                <span>
+                    Quality
+                </span>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     MOVIE LIBRARY
+===================================================== -->
+
+<section
+    class="Home-movies"
+    aria-label="Film Library"
+>
+
+
+<div
+    class="trending"
+    id="movies"
+>
+
+
+<!-- =====================================================
+     TRENDING FILMS
+===================================================== -->
+
+<div class="film-section">
+
+
+    <!-- SECTION HEADING -->
+
+    <div class="film-section-heading">
+
+        <div>
+
+            <span class="small-title">
+                POPULAR NOW
+            </span>
+
+
+            <h2 class="Title-fire">
+
+                Trending Films
+                <span>🔥</span>
+
+            </h2>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- TRENDING SLIDER -->
+
+    <div class="slider-wrapper">
+
+
+        <!-- PREVIOUS -->
+
+        <button
+            class="slider-btn slider-prev"
+            onclick="slideMovies('trendingGrid', -1)"
+            aria-label="Previous trending movies"
+            type="button"
+        >
+            ‹
+        </button>
+
+
+        <!-- TRENDING GRID -->
+
+        <div
+            class="image-slider movie-grid"
+            id="trendingGrid"
+        >
+
+
+            <!-- TRENDING 01 -->
+
+            <div
+                class="movie-card trending-card"
+                data-title="Movie One"
+                data-category="action"
+                data-type="movie"
+                data-year="2026"
+                data-trending="true"
+            >
+
+                <div class="trending-badge">
+                    🔥 #1
+                </div>
+
+
+                <img
+                    src="img/must-watch20movies.webp"
+                    alt="Movie One"
+                >
+
+
+                <div class="movie-info">
+
+                    <h3>
+                        Movie One
+                    </h3>
+
+                    <p>
+                        Action • Movie • 2026
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- TRENDING 02 -->
+
+            <div
+                class="movie-card trending-card"
+                data-title="Movie Two"
+                data-category="thriller"
+                data-type="movie"
+                data-year="2026"
+                data-trending="true"
+            >
+
+                <div class="trending-badge">
+                    🔥 #2
+                </div>
+
+
+                <img
+                    src="img/images.jpg"
+                    alt="Movie Two"
+                >
+
+
+                <div class="movie-info">
+
+                    <h3>
+                        Movie Two
+                    </h3>
+
+                    <p>
+                        Thriller • Movie • 2026
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- TRENDING 03 -->
+
+            <div
+                class="movie-card trending-card"
+                data-title="Movie Three"
+                data-category="romance"
+                data-type="drama"
+                data-year="2026"
+                data-trending="true"
+            >
+
+                <div class="trending-badge">
+                    🔥 #3
+                </div>
+
+
+                <img
+                    src="img/images (2).jpg"
+                    alt="Movie Three"
+                >
+
+
+                <div class="movie-info">
+
+                    <h3>
+                        Movie Three
+                    </h3>
+
+                    <p>
+                        Romance • Drama • 2026
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- TRENDING 04 -->
+
+            <div
+                class="movie-card trending-card"
+                data-title="Movie Four"
+                data-category="comedy"
+                data-type="movie"
+                data-year="2026"
+                data-trending="true"
+            >
+
+                <div class="trending-badge">
+                    🔥 #4
+                </div>
+
+
+                <img
+                    src="img/images (1).jpg"
+                    alt="Movie Four"
+                >
+
+
+                <div class="movie-info">
+
+                    <h3>
+                        Movie Four
+                    </h3>
+
+                    <p>
+                        Comedy • Movie • 2026
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- TRENDING 05 -->
+
+            <div
+                class="movie-card trending-card"
+                data-title="Movie Five"
+                data-category="animation"
+                data-type="anime"
+                data-year="2026"
+                data-trending="true"
+            >
+
+                <div class="trending-badge">
+                    🔥 #5
+                </div>
+
+
+                <img
+                    src="img/images (3).jpg"
+                    alt="Movie Five"
+                >
+
+
+                <div class="movie-info">
+
+                    <h3>
+                        Movie Five
+                    </h3>
+
+                    <p>
+                        Animation • Anime • 2026
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- NEXT -->
+
+        <button
+            class="slider-btn slider-next"
+            onclick="slideMovies('trendingGrid', 1)"
+            aria-label="Next trending movies"
+            type="button"
+        >
+            ›
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     SEARCH / FILTER
+===================================================== -->
+
+<div class="normal-film-tools">
+
+
+    <!-- SECTION TITLE -->
+
+    <div class="section-title">
+
+        <div>
+
+            <span class="small-title"></span>
+
+
+            <h2 class="browse-films">
+                Browse Films 🎬
+            </h2>
+
+        </div>
+
+
+        <button
+            class="see-all"
+            id="clearFilters"
+            type="button"
+        >
+            Clear Filters
+        </button>
+
+    </div>
+
+
+
+    <!-- SEARCH + FILTER -->
+
+    <div class="movie-tools">
+
+
+        <!-- SEARCH -->
+
+        <div class="movie-search">
+
+            <span>
+                ⌕
+            </span>
+
+
+            <input
+                type="search"
+                id="movieSearch"
+                placeholder="Search films..."
+                autocomplete="off"
+                aria-label="Search films"
+            >
+
+        </div>
+
+
+
+        <!-- =================================================
+             CUSTOM FILTERS
+        ================================================== -->
+
+        <div class="filter-group">
+
+
+            <!-- CATEGORY -->
+
+            <div
+                class="filter-dropdown"
+                id="categoryFilterBox"
+            >
+
+                <button
+                    class="filter-dropdown-btn"
+                    id="categoryFilterBtn"
+                    type="button"
+                    aria-expanded="false"
+                    aria-haspopup="true"
+                >
+
+                    <span id="categoryFilterText">
+                        All Categories
+                    </span>
+
+                    <span class="filter-arrow">
+                        ⌄
+                    </span>
+
+                </button>
+
+
+                <div
+                    class="filter-dropdown-menu"
+                    role="menu"
+                >
+
+
+                    <button
+                        type="button"
+                        data-value="all"
+                    >
+                        All Categories
+                    </button>
+
+
+                    <button
+                        type="button"
+                        data-value="action"
+                    >
+                        Action
+                    </button>
+
+
+                    <button
+                        type="button"
+                        data-value="thriller"
+                    >
+                        Thriller
+                    </button>
+
+
+                    <button
+                        type="button"
+                        data-value="romance"
+                    >
+                        Romance
+                    </button>
+
+
+                    <button
+                        type="button"
+                        data-value="comedy"
+                    >
+                        Comedy
+                    </button>
+
+
+                    <button
+                        type="button"
+                        data-value="horror"
+                    >
+                        Horror
+                    </button>
+
+
+                    <button
+                        type="button"
+                        data-value="animation"
+                    >
+                        Animation
+                    </button>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- TYPE -->
+
+            <div
+                class="filter-dropdown"
+                id="typeFilterBox"
+            >
+
+                <button
+                    class="filter-dropdown-btn"
+                    id="typeFilterBtn"
+                    type="button"
+                    aria-expanded="false"
+                    aria-haspopup="true"
+                >
+
+                    <span id="typeFilterText">
+                        All Types
+                    </span>
+
+                    <span class="filter-arrow">
+                        ⌄
+                    </span>
+
+                </button>
+
+
+                <div
+                    class="filter-dropdown-menu"
+                    role="menu"
+                >
+
+
+                    <button
+                        type="button"
+                        data-value="all"
+                    >
+                        All Types
+                    </button>
+
+
+                    <button
+                        type="button"
+                        data-value="movie"
+                    >
+                        Movies
+                    </button>
+
+
+                    <button
+                        type="button"
+                        data-value="drama"
+                    >
+                        Dramas
+                    </button>
+
+
+                    <button
+                        type="button"
+                        data-value="series"
+                    >
+                        TV Series
+                    </button>
+
+
+                    <button
+                        type="button"
+                        data-value="anime"
+                    >
+                        Anime
+                    </button>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!--
+                HIDDEN VALUES
+
+                Existing filtering JS එකට
+                මේ IDs use කරන්න පුළුවන්.
+            -->
+
+            <input
+                type="hidden"
+                id="categoryFilter"
+                value="all"
+            >
+
+
+            <input
+                type="hidden"
+                id="typeFilter"
+                value="all"
+            >
+
+        </div>
+
+    </div>
+
+
+
+    <!-- RESULT COUNT -->
+
+    <div
+        class="movie-result-count"
+        id="movieResultCount"
+    >
+        Showing all films
+    </div>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     NORMAL FILMS
+===================================================== -->
+
+<div class="film-section normal-films-section">
+
+
+    <div class="film-section-heading">
+    </div>
+
+
+
+    <!-- NORMAL SLIDER -->
+
+    <div class="slider-wrapper">
+
+
+        <!-- PREVIOUS -->
+
+        <button
+            class="slider-btn slider-prev"
+            onclick="slideMovies('normalGrid', -1)"
+            aria-label="Previous normal movies"
+            type="button"
+        >
+            ‹
+        </button>
+
+
+
+        <!-- NORMAL MOVIES -->
+
+        <div
+            class="image-slider movie-grid"
+            id="normalGrid"
+        >
+
+
+            <!-- NORMAL FILM 01 -->
+
+            <div
+                class="movie-card normal-card"
+                data-title="Normal Movie 01"
+                data-category="action"
+                data-type="movie"
+                data-year="2026"
+            >
+
+                <img
+                    src="img/images.jpg"
+                    alt="Normal Movie 01"
+                >
+
+
+                <div class="movie-info">
+
+                    <h3>
+                        Normal Movie 01
+                    </h3>
+
+                    <p>
+                        Action • Movie • 2026
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- NORMAL FILM 02 -->
+
+            <div
+                class="movie-card normal-card"
+                data-title="Normal Movie 02"
+                data-category="horror"
+                data-type="movie"
+                data-year="2026"
+            >
+
+                <img
+                    src="img/images (1).jpg"
+                    alt="Normal Movie 02"
+                >
+
+
+                <div class="movie-info">
+
+                    <h3>
+                        Normal Movie 02
+                    </h3>
+
+                    <p>
+                        Horror • Movie • 2026
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- NORMAL FILM 03 -->
+
+            <div
+                class="movie-card normal-card"
+                data-title="Normal Movie 03"
+                data-category="comedy"
+                data-type="movie"
+                data-year="2026"
+            >
+
+                <img
+                    src="img/images (2).jpg"
+                    alt="Normal Movie 03"
+                >
+
+
+                <div class="movie-info">
+
+                    <h3>
+                        Normal Movie 03
+                    </h3>
+
+                    <p>
+                        Comedy • Movie • 2026
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- NORMAL FILM 04 -->
+
+            <div
+                class="movie-card normal-card"
+                data-title="Normal Movie 04"
+                data-category="thriller"
+                data-type="series"
+                data-year="2026"
+            >
+
+                <img
+                    src="img/images (3).jpg"
+                    alt="Normal Movie 04"
+                >
+
+
+                <div class="movie-info">
+
+                    <h3>
+                        Normal Movie 04
+                    </h3>
+
+                    <p>
+                        Thriller • TV Series • 2026
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- NEXT -->
+
+        <button
+            class="slider-btn slider-next"
+            onclick="slideMovies('normalGrid', 1)"
+            aria-label="Next normal movies"
+            type="button"
+        >
+            ›
+        </button>
+
+
+    </div>
+
+
+
+    <!-- EMPTY RESULT -->
+
+    <div
+        class="movie-empty"
+        id="movieEmpty"
+    >
+
+        <div>
+            🎬
+        </div>
+
+        <h3>
+            No films found
+        </h3>
+
+        <p>
+            Try another film name, category, or type.
+        </p>
+
+    </div>
+
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section
+    class="about-section"
+    id="about"
+>
+
+
+    <div class="about-content">
+
+
+        <span class="small-title">
+            ABOUT FILM ZONE
+        </span>
+
+
+        <h2>
+
+            Everything You Love,
+
+            <span>
+                In One Place.
+            </span>
+
+        </h2>
+
+
+        <p>
+
+            Film Zone is a modern entertainment platform
+            designed to bring movies, dramas and TV series
+            together in one beautiful place.
+
+        </p>
+
+
+    </div>
+
+
+</section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     JOIN US MODAL
+===================================================== -->
+
+<div
+    class="join-modal"
+    id="joinModal"
+    aria-hidden="true"
+>
+
+
+    <div
+        class="join-backdrop"
+        onclick="closeJoinModal()"
+    ></div>
+
+
+    <div
+        class="join-box"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="joinTitle"
+    >
+
+
+        <button
+            class="join-close"
+            onclick="closeJoinModal()"
+            aria-label="Close"
+            type="button"
+        >
+            ×
+        </button>
+
+
+        <div class="join-icon">
+            💬
+        </div>
+
+
+        <span class="small-title">
+            JOIN FILM ZONE
+        </span>
+
+
+        <h2 id="joinTitle">
+            Join Us on WhatsApp
+        </h2>
+
+
+        <p>
+
+            Join our WhatsApp community to get Film Zone
+            updates, new film announcements and other
+            information.
+
+        </p>
+
+
+
+        <!-- WHATSAPP -->
+
+        <div class="whatsapp-list">
+
+
+            <a
+                class="whatsapp-link"
+                href="https://wa.me/94700000000"
+                target="_blank"
+                rel="noopener"
+            >
+
+                <span>
+                    WhatsApp 01
+                </span>
+
+                <strong>
+                    +94 70 000 0000
+                </strong>
+
+            </a>
+
+
+
+            <a
+                class="whatsapp-link"
+                href="https://wa.me/94710000000"
+                target="_blank"
+                rel="noopener"
+            >
+
+                <span>
+                    WhatsApp 02
+                </span>
+
+                <strong>
+                    +94 71 000 0000
+                </strong>
+
+            </a>
+
+
+        </div>
+
+
+
+        <p class="join-note">
+
+            Replace the placeholder numbers
+            with your WhatsApp number.
+
+        </p>
+
+
+    </div>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>
